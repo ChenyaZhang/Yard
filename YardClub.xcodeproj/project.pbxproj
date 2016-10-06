@@ -16,6 +16,9 @@
 		F577F0C11DA47E200074D6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F577F0BF1DA47E200074D6B7 /* LaunchScreen.storyboard */; };
 		F577F0CC1DA47E200074D6B7 /* YardClubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F577F0CB1DA47E200074D6B7 /* YardClubTests.m */; };
 		F577F0D71DA47E200074D6B7 /* YardClubUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F577F0D61DA47E200074D6B7 /* YardClubUITests.m */; };
+		F5A9102C1DA56B9200030CD3 /* BottomToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9102B1DA56B9200030CD3 /* BottomToolBar.m */; };
+		F5A910351DA58D9900030CD3 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A910341DA58D9100030CD3 /* OpenSans-Bold.ttf */; };
+		F5A910381DA59B7A00030CD3 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A910371DA59B7A00030CD3 /* UIBarButtonItem+Badge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,11 @@
 		F577F0D21DA47E200074D6B7 /* YardClubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YardClubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F577F0D61DA47E200074D6B7 /* YardClubUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YardClubUITests.m; sourceTree = "<group>"; };
 		F577F0D81DA47E200074D6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5A9102A1DA56B9200030CD3 /* BottomToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomToolBar.h; sourceTree = "<group>"; };
+		F5A9102B1DA56B9200030CD3 /* BottomToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomToolBar.m; sourceTree = "<group>"; };
+		F5A910341DA58D9100030CD3 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		F5A910361DA59B7A00030CD3 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
+		F5A910371DA59B7A00030CD3 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,14 +114,10 @@
 			children = (
 				F577F0B11DA47E200074D6B7 /* AppDelegate.h */,
 				F577F0B21DA47E200074D6B7 /* AppDelegate.m */,
-				F577F0B41DA47E200074D6B7 /* FirstViewController.h */,
-				F577F0B51DA47E200074D6B7 /* FirstViewController.m */,
-				F577F0B71DA47E200074D6B7 /* SecondViewController.h */,
-				F577F0B81DA47E200074D6B7 /* SecondViewController.m */,
+				F5A9102E1DA56F5B00030CD3 /* View Controllers */,
+				F5A9102F1DA56F6B00030CD3 /* UI Elements */,
 				F577F0BA1DA47E200074D6B7 /* Main.storyboard */,
-				F577F0BD1DA47E200074D6B7 /* Assets.xcassets */,
 				F577F0BF1DA47E200074D6B7 /* LaunchScreen.storyboard */,
-				F577F0C21DA47E200074D6B7 /* Info.plist */,
 				F577F0AE1DA47E200074D6B7 /* Supporting Files */,
 			);
 			path = YardClub;
@@ -122,6 +126,7 @@
 		F577F0AE1DA47E200074D6B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F577F0C21DA47E200074D6B7 /* Info.plist */,
 				F577F0AF1DA47E200074D6B7 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -143,6 +148,38 @@
 				F577F0D81DA47E200074D6B7 /* Info.plist */,
 			);
 			path = YardClubUITests;
+			sourceTree = "<group>";
+		};
+		F5A910151DA48FA200030CD3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F5A910341DA58D9100030CD3 /* OpenSans-Bold.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		F5A9102E1DA56F5B00030CD3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F577F0B41DA47E200074D6B7 /* FirstViewController.h */,
+				F577F0B51DA47E200074D6B7 /* FirstViewController.m */,
+				F577F0B71DA47E200074D6B7 /* SecondViewController.h */,
+				F577F0B81DA47E200074D6B7 /* SecondViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F5A9102F1DA56F6B00030CD3 /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				F5A910151DA48FA200030CD3 /* Fonts */,
+				F577F0BD1DA47E200074D6B7 /* Assets.xcassets */,
+				F5A9102A1DA56B9200030CD3 /* BottomToolBar.h */,
+				F5A9102B1DA56B9200030CD3 /* BottomToolBar.m */,
+				F5A910361DA59B7A00030CD3 /* UIBarButtonItem+Badge.h */,
+				F5A910371DA59B7A00030CD3 /* UIBarButtonItem+Badge.m */,
+			);
+			name = "UI Elements";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +249,7 @@
 				TargetAttributes = {
 					F577F0AA1DA47E200074D6B7 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HK5T53PCUH;
 						ProvisioningStyle = Automatic;
 					};
 					F577F0C61DA47E200074D6B7 = {
@@ -251,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A910351DA58D9900030CD3 /* OpenSans-Bold.ttf in Resources */,
 				F577F0C11DA47E200074D6B7 /* LaunchScreen.storyboard in Resources */,
 				F577F0BE1DA47E200074D6B7 /* Assets.xcassets in Resources */,
 				F577F0BC1DA47E200074D6B7 /* Main.storyboard in Resources */,
@@ -278,10 +317,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A910381DA59B7A00030CD3 /* UIBarButtonItem+Badge.m in Sources */,
 				F577F0B91DA47E200074D6B7 /* SecondViewController.m in Sources */,
 				F577F0B31DA47E200074D6B7 /* AppDelegate.m in Sources */,
 				F577F0B61DA47E200074D6B7 /* FirstViewController.m in Sources */,
 				F577F0B01DA47E200074D6B7 /* main.m in Sources */,
+				F5A9102C1DA56B9200030CD3 /* BottomToolBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +471,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HK5T53PCUH;
 				INFOPLIST_FILE = YardClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ChenyaZhang.YardClub;
@@ -441,6 +483,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HK5T53PCUH;
 				INFOPLIST_FILE = YardClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ChenyaZhang.YardClub;
@@ -513,6 +556,7 @@
 				F577F0DD1DA47E200074D6B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F577F0DE1DA47E200074D6B7 /* Build configuration list for PBXNativeTarget "YardClubTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +565,7 @@
 				F577F0E01DA47E200074D6B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F577F0E11DA47E200074D6B7 /* Build configuration list for PBXNativeTarget "YardClubUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +574,7 @@
 				F577F0E31DA47E200074D6B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
