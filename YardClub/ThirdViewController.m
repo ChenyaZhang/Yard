@@ -1,24 +1,23 @@
 //
-//  SecondViewController.m
+//  ThirdViewController.m
 //  YardClub
 //
-//  Created by Chenya Zhang on 10/4/16.
+//  Created by Chenya Zhang on 10/5/16.
 //  Copyright © 2016 Chenya Zhang. All rights reserved.
 //
 
-#import "SecondViewController.h"
 #import "ThirdViewController.h"
+#import "SecondViewController.h"
 #import "BottomToolBar.h"
-#import "FirstViewController.h"
 
-@interface SecondViewController ()
+@interface ThirdViewController ()
 @property (strong, nonatomic) IBOutlet UINavigationItem *topNavigationBar;
 @property (strong, nonatomic) IBOutlet UIToolbar *bottomToolBar;
 @property (strong, nonatomic) IBOutlet UILabel *chooseRentalStoreLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end
 
-@implementation SecondViewController {
+@implementation ThirdViewController {
     NSMutableArray *tableData;
 }
 
@@ -39,13 +38,13 @@
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"phone-call"] style:UIBarButtonItemStylePlain target:self action:nil];
     
     UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithTitle:@"◀︎" style:UIBarButtonItemStylePlain target:self action:@selector(goBackAction)];
-   
+    
     // Set bar button item image tint color
     [leftBarButton setTitleTextAttributes:@{
                                             NSFontAttributeName: [UIFont fontWithName:@"OpenSans-Bold" size:20.0],
                                             NSForegroundColorAttributeName: [UIColor colorWithRed:0.92 green:0.72 blue:0.11 alpha:1.0]
                                             } forState:UIControlStateNormal];
-
+    
     rightBarButton.tintColor = [UIColor colorWithRed:0.92 green:0.72 blue:0.11 alpha:1.0];
     // Add buttons to navigation bar
     self.topNavigationBar.titleView = titleLabel;
@@ -55,9 +54,9 @@
     
     // Add labels
     NSAttributedString *chooseRentalStoreText = [[NSAttributedString alloc] initWithString:@"WHAT KIND OF EQUIPMENT ARE YOU LOOKING FOR?" attributes:@{
-                                                                                                                                 NSFontAttributeName: [UIFont fontWithName:@"OpenSans-Bold" size:15.0],
-                                                                                                                                 NSForegroundColorAttributeName: [UIColor blackColor]
-                                                                                                                                 }];
+                                                                                                                                                       NSFontAttributeName: [UIFont fontWithName:@"OpenSans-Bold" size:15.0],
+                                                                                                                                                       NSForegroundColorAttributeName: [UIColor blackColor]
+                                                                                                                                                       }];
     self.chooseRentalStoreLabel.attributedText = chooseRentalStoreText;
     self.chooseRentalStoreLabel.numberOfLines = 0;
     
@@ -67,8 +66,8 @@
 }
 
 - (void)goBackAction {
-    FirstViewController *requestViewController = [[FirstViewController alloc] init];
-    requestViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FirstViewController"];
+    SecondViewController *requestViewController = [[SecondViewController alloc] init];
+    requestViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SecondViewController"];
     [self.navigationController showViewController:requestViewController sender:self];
 }
 
@@ -89,15 +88,6 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ThirdViewController *detailViewController = [[ThirdViewController alloc] init];
-    // detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ThirdViewController"];
-    detailViewController.categoryID = [NSString stringWithFormat:@"%li", (long)indexPath.row];
-    NSLog(@"!!!!categoryId: %@", detailViewController.categoryID);
-    [self performSegueWithIdentifier:@"DetailTableView" sender:self];
 }
 
 - (void)loadData {
@@ -142,17 +132,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Make sure segue name in storyboard is the same as this line
-    if ([[segue identifier] isEqualToString:@"DetailTableView"])
-    {
-//        ThirdViewController *detailViewController = [[ThirdViewController alloc] init];
-//        // detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ThirdViewController"];
-//        detailViewController.categoryID;
-    }
 }
 
 @end

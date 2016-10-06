@@ -19,6 +19,8 @@
 		F5A9102C1DA56B9200030CD3 /* BottomToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9102B1DA56B9200030CD3 /* BottomToolBar.m */; };
 		F5A910351DA58D9900030CD3 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A910341DA58D9100030CD3 /* OpenSans-Bold.ttf */; };
 		F5A910381DA59B7A00030CD3 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A910371DA59B7A00030CD3 /* UIBarButtonItem+Badge.m */; };
+		F5A9103E1DA61AB000030CD3 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9103D1DA61AB000030CD3 /* ThirdViewController.m */; };
+		F5A910411DA61C4600030CD3 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A910401DA61C4600030CD3 /* FourthViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		F5A910341DA58D9100030CD3 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		F5A910361DA59B7A00030CD3 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
 		F5A910371DA59B7A00030CD3 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
+		F5A9103C1DA61AB000030CD3 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		F5A9103D1DA61AB000030CD3 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		F5A9103F1DA61C4600030CD3 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		F5A910401DA61C4600030CD3 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,10 @@
 				F577F0B51DA47E200074D6B7 /* FirstViewController.m */,
 				F577F0B71DA47E200074D6B7 /* SecondViewController.h */,
 				F577F0B81DA47E200074D6B7 /* SecondViewController.m */,
+				F5A9103C1DA61AB000030CD3 /* ThirdViewController.h */,
+				F5A9103D1DA61AB000030CD3 /* ThirdViewController.m */,
+				F5A9103F1DA61C4600030CD3 /* FourthViewController.h */,
+				F5A910401DA61C4600030CD3 /* FourthViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -317,12 +327,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A910411DA61C4600030CD3 /* FourthViewController.m in Sources */,
 				F5A910381DA59B7A00030CD3 /* UIBarButtonItem+Badge.m in Sources */,
 				F577F0B91DA47E200074D6B7 /* SecondViewController.m in Sources */,
 				F577F0B31DA47E200074D6B7 /* AppDelegate.m in Sources */,
 				F577F0B61DA47E200074D6B7 /* FirstViewController.m in Sources */,
 				F577F0B01DA47E200074D6B7 /* main.m in Sources */,
 				F5A9102C1DA56B9200030CD3 /* BottomToolBar.m in Sources */,
+				F5A9103E1DA61AB000030CD3 /* ThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,12 +34,13 @@
     UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     
     // Set button features and add to bar button array
+    [toolBarButtonItems addObject:flexible];
     for (UIButton *button in buttonItems) {
         button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         button.titleLabel.textAlignment = NSTextAlignmentCenter;
         [button sizeToFit];
         NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@",button.currentTitle]];
-        if (toolBarButtonItems.count == 0) {
+        if (toolBarButtonItems.count == 1) {
             [title addAttributes:@{
                                    NSFontAttributeName: [UIFont fontWithName:@"OpenSans-Bold" size:13.0],
                                    NSForegroundColorAttributeName: [UIColor colorWithRed:0.92 green:0.72 blue:0.11 alpha:1.0]
@@ -54,9 +55,7 @@
         [button setAttributedTitle:title forState:UIControlStateNormal];
         UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         [toolBarButtonItems addObject:barItem];
-        if (toolBarButtonItems.count != 7) {
-            [toolBarButtonItems addObject:flexible];
-        }
+        [toolBarButtonItems addObject:flexible];
     }
     return toolBarButtonItems;
 }

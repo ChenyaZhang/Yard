@@ -9,6 +9,7 @@
 #import "FirstViewController.h"
 #import "BottomToolBar.h"
 #import "UIBarButtonItem+Badge.h"
+#import "SecondViewController.h"
 
 @interface FirstViewController ()
 @property (strong, nonatomic) IBOutlet UINavigationItem *topNavigationBar;
@@ -32,6 +33,7 @@
     titleLabel.attributedText = title;
     // Set bar button item with image
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"phone-call"] style:UIBarButtonItemStylePlain target:self action:nil];
+    
     UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"]
                                                                       style:UIBarButtonItemStylePlain
                                                                      target:self
@@ -75,6 +77,11 @@
     [self.view bringSubviewToFront:self.imagePageControl];
 }
 
+- (IBAction)tabYardClubAction:(UIButton *)sender {
+    SecondViewController *catalogViewController = [[SecondViewController alloc] init];
+    catalogViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SecondViewController"];
+    [self.navigationController showViewController:catalogViewController sender:self];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
