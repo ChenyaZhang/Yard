@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"!!!!Baobao categoryId: %@", self.categoryID);
+    
     // Initialize table data
     [self loadData];
     
@@ -94,7 +96,7 @@
     tableData = [[NSMutableArray alloc]init];
     // NSURLSession
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://yardclub.github.io/mobile-interview/api/catalog.json"]];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://yardclub.github.io/mobile-interview/api/catalog/%@.json", self.categoryID]]];
     [request setHTTPMethod:@"GET"];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -115,9 +117,9 @@
                 if (HTTPStatusCode != 200) {
                     NSLog(@"HTTP status code = %ld!", (long)HTTPStatusCode);
                 }
-                for (int i = 0; i < 9; i++) {
+                for (int i = 0; i < returnedArray.count; i++) {
                     NSDictionary *objectDict = [returnedArray objectAtIndex:i];
-                    NSString *value = [objectDict valueForKey:@"name"];
+                    NSString *value = [objectDict valueForKey:@"display_name"];
                     [tableData addObject:value];
                 }
             }

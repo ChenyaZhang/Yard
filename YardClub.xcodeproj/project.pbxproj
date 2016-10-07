@@ -21,6 +21,8 @@
 		F5A910381DA59B7A00030CD3 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A910371DA59B7A00030CD3 /* UIBarButtonItem+Badge.m */; };
 		F5A9103E1DA61AB000030CD3 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9103D1DA61AB000030CD3 /* ThirdViewController.m */; };
 		F5A910411DA61C4600030CD3 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A910401DA61C4600030CD3 /* FourthViewController.m */; };
+		F5A910441DA85AC700030CD3 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A910431DA85A7100030CD3 /* OpenSans-Regular.ttf */; };
+		F5A910451DA85AC700030CD3 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A910421DA85A6900030CD3 /* OpenSans-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		F5A9103D1DA61AB000030CD3 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		F5A9103F1DA61C4600030CD3 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		F5A910401DA61C4600030CD3 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		F5A910421DA85A6900030CD3 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Light.ttf"; path = "fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		F5A910431DA85A7100030CD3 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 		F5A910151DA48FA200030CD3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F5A910431DA85A7100030CD3 /* OpenSans-Regular.ttf */,
+				F5A910421DA85A6900030CD3 /* OpenSans-Light.ttf */,
 				F5A910341DA58D9100030CD3 /* OpenSans-Bold.ttf */,
 			);
 			name = Fonts;
@@ -299,6 +305,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A910441DA85AC700030CD3 /* OpenSans-Regular.ttf in Resources */,
+				F5A910451DA85AC700030CD3 /* OpenSans-Light.ttf in Resources */,
 				F5A910351DA58D9900030CD3 /* OpenSans-Bold.ttf in Resources */,
 				F577F0C11DA47E200074D6B7 /* LaunchScreen.storyboard in Resources */,
 				F577F0BE1DA47E200074D6B7 /* Assets.xcassets in Resources */,

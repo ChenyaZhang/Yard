@@ -17,6 +17,9 @@
 @property (strong, nonatomic) IBOutlet UIPageControl *imagePageControl;
 @property (strong, nonatomic) IBOutlet UILabel *featuredEquipmentLabel;
 @property (strong, nonatomic) IBOutlet UILabel *chooseRentalStoreLabel;
+@property (strong, nonatomic) IBOutlet UILabel *rentalStoreLabel;
+@property (strong, nonatomic) IBOutlet UILabel *contractorOwnedLabel;
+@property (strong, nonatomic) IBOutlet UILabel *label1;
 @end
 
 @implementation FirstViewController
@@ -65,6 +68,35 @@
                                                                                                                               }];
     self.chooseRentalStoreLabel.attributedText = chooseRentalStoreText;
     
+    NSAttributedString *rentalStoreText = [[NSAttributedString alloc] initWithString:@"RENTAL STORE" attributes:@{
+                                                                                                                                 NSFontAttributeName: [UIFont fontWithName:@"OpenSans-Bold" size:14.0],
+                                                                                                                                 NSForegroundColorAttributeName: [UIColor blackColor]
+                                                                                                                                 }];
+    self.rentalStoreLabel.attributedText = rentalStoreText;
+    
+    NSAttributedString *contractorOwnedText = [[NSAttributedString alloc] initWithString:@"CONTRACTOR-OWNED" attributes:@{
+                                                                                                                  NSFontAttributeName: [UIFont fontWithName:@"OpenSans-Bold" size:14.0],
+                                                                                                                  NSForegroundColorAttributeName: [UIColor blackColor]
+                                                                                                                  }];
+    self.contractorOwnedLabel.attributedText = contractorOwnedText;
+    
+    NSAttributedString *label1Text = [[NSAttributedString alloc] initWithString:@"Newest rental fleet in the industry" attributes:@{
+                                                                                                                          NSFontAttributeName: [UIFont fontWithName:@"OpenSans" size:14.0],
+                                                                                                                          NSForegroundColorAttributeName: [UIColor blackColor]
+                                                                                                                          }];
+    self.label1.numberOfLines = 0;
+    self.label1.attributedText = label1Text;
+    
+    for (NSString* family in [UIFont familyNames])
+    {
+        NSLog(@"%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+        {
+            NSLog(@"  %@", name);
+        }
+    }
+    
     // Add image page control
     self.imagePageControl.numberOfPages = 5;
     self.imagePageControl.currentPage = 1;
@@ -75,6 +107,7 @@
     
     // Reorder views
     [self.view bringSubviewToFront:self.imagePageControl];
+    [self.view bringSubviewToFront:self.bottomToolBar];
 }
 
 - (IBAction)tabYardClubAction:(UIButton *)sender {

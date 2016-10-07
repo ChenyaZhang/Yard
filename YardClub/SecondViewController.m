@@ -58,8 +58,8 @@
                                                                                                                                  NSFontAttributeName: [UIFont fontWithName:@"OpenSans-Bold" size:15.0],
                                                                                                                                  NSForegroundColorAttributeName: [UIColor blackColor]
                                                                                                                                  }];
-    self.chooseRentalStoreLabel.attributedText = chooseRentalStoreText;
     self.chooseRentalStoreLabel.numberOfLines = 0;
+    self.chooseRentalStoreLabel.attributedText = chooseRentalStoreText;
     
     // Add custom bar buttons to bottom tool bar
     NSArray *toolBarButtonItems = [BottomToolBar createBottomToolBar];
@@ -94,10 +94,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ThirdViewController *detailViewController = [[ThirdViewController alloc] init];
-    // detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ThirdViewController"];
-    detailViewController.categoryID = [NSString stringWithFormat:@"%li", (long)indexPath.row];
-    NSLog(@"!!!!categoryId: %@", detailViewController.categoryID);
-    [self performSegueWithIdentifier:@"DetailTableView" sender:self];
+    detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ThirdViewController"];
+    detailViewController.categoryID = [NSString stringWithFormat:@"%li", (long)indexPath.row + 1];
+    [self.navigationController showViewController:detailViewController sender:self];
 }
 
 - (void)loadData {
@@ -125,7 +124,7 @@
                 if (HTTPStatusCode != 200) {
                     NSLog(@"HTTP status code = %ld!", (long)HTTPStatusCode);
                 }
-                for (int i = 0; i < 9; i++) {
+                for (int i = 0; i < returnedArray.count; i++) {
                     NSDictionary *objectDict = [returnedArray objectAtIndex:i];
                     NSString *value = [objectDict valueForKey:@"name"];
                     [tableData addObject:value];
@@ -142,17 +141,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Make sure segue name in storyboard is the same as this line
-    if ([[segue identifier] isEqualToString:@"DetailTableView"])
-    {
-//        ThirdViewController *detailViewController = [[ThirdViewController alloc] init];
-//        // detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ThirdViewController"];
-//        detailViewController.categoryID;
-    }
 }
 
 @end
