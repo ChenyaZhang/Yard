@@ -28,30 +28,11 @@
     // Initialize table data
     [self loadData];
     
-    // Add custom title and buttons to top navigation bar
-    NSAttributedString *title = [[NSAttributedString alloc] initWithString:@"REQUEST EQUIPMENT" attributes:@{
-                                                                                                             NSFontAttributeName: [UIFont fontWithName:@"OpenSans-Bold" size:18.0],
-                                                                                                             NSForegroundColorAttributeName: [UIColor whiteColor]
-                                                                                                             }];
-    UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.attributedText = title;
-    // Set bar button item with image
+    // Add custom buttons to top navigation bar
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"phone-call"] style:UIBarButtonItemStylePlain target:self action:nil];
-    
-    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithTitle:@"◀︎" style:UIBarButtonItemStylePlain target:self action:@selector(goBackAction)];
-   
-    // Set bar button item image tint color
-    [leftBarButton setTitleTextAttributes:@{
-                                            NSFontAttributeName: [UIFont fontWithName:@"OpenSans-Bold" size:20.0],
-                                            NSForegroundColorAttributeName: [UIColor colorWithRed:0.92 green:0.72 blue:0.11 alpha:1.0]
-                                            } forState:UIControlStateNormal];
 
-    rightBarButton.tintColor = [UIColor colorWithRed:0.92 green:0.72 blue:0.11 alpha:1.0];
     // Add buttons to navigation bar
-    self.topNavigationBar.titleView = titleLabel;
     self.navigationItem.rightBarButtonItem = rightBarButton;
-    self.navigationItem.leftBarButtonItem = leftBarButton;
-    [self.navigationItem.titleView sizeToFit];
     
     // Add labels
     NSAttributedString *chooseRentalStoreText = [[NSAttributedString alloc] initWithString:@"WHAT KIND OF EQUIPMENT ARE YOU LOOKING FOR?" attributes:@{
@@ -64,12 +45,6 @@
     // Add custom bar buttons to bottom tool bar
     NSArray *toolBarButtonItems = [BottomToolBar createBottomToolBar];
     [self.bottomToolBar setItems:toolBarButtonItems animated:YES];
-}
-
-- (void)goBackAction {
-    FirstViewController *requestViewController = [[FirstViewController alloc] init];
-    requestViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FirstViewController"];
-    [self.navigationController showViewController:requestViewController sender:self];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

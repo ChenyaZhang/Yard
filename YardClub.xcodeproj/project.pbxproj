@@ -23,6 +23,9 @@
 		F5A910411DA61C4600030CD3 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A910401DA61C4600030CD3 /* FourthViewController.m */; };
 		F5A910441DA85AC700030CD3 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A910431DA85A7100030CD3 /* OpenSans-Regular.ttf */; };
 		F5A910451DA85AC700030CD3 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5A910421DA85A6900030CD3 /* OpenSans-Light.ttf */; };
+		F5A910481DA95C7F00030CD3 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A910471DA95C7F00030CD3 /* RootNavigationController.m */; };
+		F5A9104B1DA964A300030CD3 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9104A1DA964A300030CD3 /* UIImage+animatedGIF.m */; };
+		F5A9104E1DA97A6F00030CD3 /* FourthVCLoadText.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9104D1DA97A6F00030CD3 /* FourthVCLoadText.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,12 @@
 		F5A910401DA61C4600030CD3 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		F5A910421DA85A6900030CD3 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Light.ttf"; path = "fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		F5A910431DA85A7100030CD3 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		F5A910461DA95C7F00030CD3 /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
+		F5A910471DA95C7F00030CD3 /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
+		F5A910491DA9649C00030CD3 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		F5A9104A1DA964A300030CD3 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		F5A9104C1DA97A6F00030CD3 /* FourthVCLoadText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthVCLoadText.h; sourceTree = "<group>"; };
+		F5A9104D1DA97A6F00030CD3 /* FourthVCLoadText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthVCLoadText.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +133,7 @@
 			children = (
 				F577F0B11DA47E200074D6B7 /* AppDelegate.h */,
 				F577F0B21DA47E200074D6B7 /* AppDelegate.m */,
+				F5A9104F1DA97A7B00030CD3 /* Model */,
 				F5A9102E1DA56F5B00030CD3 /* View Controllers */,
 				F5A9102F1DA56F6B00030CD3 /* UI Elements */,
 				F577F0BA1DA47E200074D6B7 /* Main.storyboard */,
@@ -181,6 +191,8 @@
 				F5A9103D1DA61AB000030CD3 /* ThirdViewController.m */,
 				F5A9103F1DA61C4600030CD3 /* FourthViewController.h */,
 				F5A910401DA61C4600030CD3 /* FourthViewController.m */,
+				F5A910461DA95C7F00030CD3 /* RootNavigationController.h */,
+				F5A910471DA95C7F00030CD3 /* RootNavigationController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -194,8 +206,19 @@
 				F5A9102B1DA56B9200030CD3 /* BottomToolBar.m */,
 				F5A910361DA59B7A00030CD3 /* UIBarButtonItem+Badge.h */,
 				F5A910371DA59B7A00030CD3 /* UIBarButtonItem+Badge.m */,
+				F5A910491DA9649C00030CD3 /* UIImage+animatedGIF.h */,
+				F5A9104A1DA964A300030CD3 /* UIImage+animatedGIF.m */,
 			);
 			name = "UI Elements";
+			sourceTree = "<group>";
+		};
+		F5A9104F1DA97A7B00030CD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5A9104C1DA97A6F00030CD3 /* FourthVCLoadText.h */,
+				F5A9104D1DA97A6F00030CD3 /* FourthVCLoadText.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,7 +361,10 @@
 				F5A910411DA61C4600030CD3 /* FourthViewController.m in Sources */,
 				F5A910381DA59B7A00030CD3 /* UIBarButtonItem+Badge.m in Sources */,
 				F577F0B91DA47E200074D6B7 /* SecondViewController.m in Sources */,
+				F5A9104B1DA964A300030CD3 /* UIImage+animatedGIF.m in Sources */,
+				F5A9104E1DA97A6F00030CD3 /* FourthVCLoadText.m in Sources */,
 				F577F0B31DA47E200074D6B7 /* AppDelegate.m in Sources */,
+				F5A910481DA95C7F00030CD3 /* RootNavigationController.m in Sources */,
 				F577F0B61DA47E200074D6B7 /* FirstViewController.m in Sources */,
 				F577F0B01DA47E200074D6B7 /* main.m in Sources */,
 				F5A9102C1DA56B9200030CD3 /* BottomToolBar.m in Sources */,

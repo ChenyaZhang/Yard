@@ -20,6 +20,11 @@
 @property (strong, nonatomic) IBOutlet UILabel *rentalStoreLabel;
 @property (strong, nonatomic) IBOutlet UILabel *contractorOwnedLabel;
 @property (strong, nonatomic) IBOutlet UILabel *label1;
+@property (strong, nonatomic) IBOutlet UILabel *label2;
+@property (strong, nonatomic) IBOutlet UILabel *label3;
+@property (strong, nonatomic) IBOutlet UILabel *label4;
+@property (strong, nonatomic) IBOutlet UILabel *label5;
+@property (strong, nonatomic) IBOutlet UILabel *label6;
 @end
 
 @implementation FirstViewController
@@ -27,14 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Add custom title and buttons to top navigation bar
-    NSAttributedString *title = [[NSAttributedString alloc] initWithString:@"REQUEST EQUIPMENT" attributes:@{
-                                                                                                            NSFontAttributeName: [UIFont fontWithName:@"OpenSans-Bold" size:18.0],
-                                                                                                            NSForegroundColorAttributeName: [UIColor whiteColor]
-                                                                                                            }];
-    UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.attributedText = title;
-    // Set bar button item with image
+    // Add custom buttons to top navigation bar
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"phone-call"] style:UIBarButtonItemStylePlain target:self action:nil];
     
     UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu"]
@@ -46,14 +44,9 @@
     self.navigationItem.leftBarButtonItem.badgeTextColor = [UIColor blackColor];
     self.navigationItem.leftBarButtonItem.badgeBGColor = [UIColor colorWithRed:0.92 green:0.72 blue:0.11 alpha:1.0];
     self.navigationItem.leftBarButtonItem.badgeFont = [UIFont fontWithName:@"OpenSans-Bold" size:13.0];
-    // Set bar button item image tint color
-    leftBarButton.tintColor = [UIColor colorWithRed:0.92 green:0.72 blue:0.11 alpha:1.0];
-    rightBarButton.tintColor = [UIColor colorWithRed:0.92 green:0.72 blue:0.11 alpha:1.0];
     // Add buttons to navigation bar
-    self.topNavigationBar.titleView = titleLabel;
     self.navigationItem.rightBarButtonItem = rightBarButton;
     self.navigationItem.leftBarButtonItem = leftBarButton;
-    [self.navigationItem.titleView sizeToFit];
     
     // Add labels
     NSAttributedString *featuredEquipmentText = [[NSAttributedString alloc] initWithString:@"FEATURED EQUIPMENT" attributes:@{
@@ -81,21 +74,47 @@
     self.contractorOwnedLabel.attributedText = contractorOwnedText;
     
     NSAttributedString *label1Text = [[NSAttributedString alloc] initWithString:@"Newest rental fleet in the industry" attributes:@{
-                                                                                                                          NSFontAttributeName: [UIFont fontWithName:@"OpenSans" size:14.0],
+                                                                                                                          NSFontAttributeName: [UIFont fontWithName:@"OpenSans" size:13.0],
                                                                                                                           NSForegroundColorAttributeName: [UIColor blackColor]
                                                                                                                           }];
     self.label1.numberOfLines = 0;
     self.label1.attributedText = label1Text;
     
-    for (NSString* family in [UIFont familyNames])
-    {
-        NSLog(@"%@", family);
-        
-        for (NSString* name in [UIFont fontNamesForFamilyName: family])
-        {
-            NSLog(@"  %@", name);
-        }
-    }
+    NSAttributedString *label2Text = [[NSAttributedString alloc] initWithString:@"Unlimited length of Rental" attributes:@{
+                                                                                                                                    NSFontAttributeName: [UIFont fontWithName:@"OpenSans" size:13.0],
+                                                                                                                                    NSForegroundColorAttributeName: [UIColor blackColor]
+                                                                                                                                    }];
+    self.label2.numberOfLines = 0;
+    self.label2.attributedText = label2Text;
+    
+    NSAttributedString *label3Text = [[NSAttributedString alloc] initWithString:@"Quick response time on availability" attributes:@{
+                                                                                                                           NSFontAttributeName: [UIFont fontWithName:@"OpenSans" size:13.0],
+                                                                                                                           NSForegroundColorAttributeName: [UIColor blackColor]
+                                                                                                                           }];
+    self.label3.numberOfLines = 0;
+    self.label3.attributedText = label3Text;
+    
+    NSAttributedString *label4Text = [[NSAttributedString alloc] initWithString:@"Fixed rental length" attributes:@{
+                                                                                                                                    NSFontAttributeName: [UIFont fontWithName:@"OpenSans" size:13.0],
+                                                                                                                                    NSForegroundColorAttributeName: [UIColor blackColor]
+                                                                                                                                    }];
+    self.label4.numberOfLines = 0;
+    self.label4.attributedText = label4Text;
+    
+    NSAttributedString *label5Text = [[NSAttributedString alloc] initWithString:@"24-hr response time" attributes:@{
+                                                                                                                    NSFontAttributeName: [UIFont fontWithName:@"OpenSans" size:13.0],
+                                                                                                                    NSForegroundColorAttributeName: [UIColor blackColor]
+                                                                                                                    }];
+    self.label5.numberOfLines = 0;
+    self.label5.attributedText = label5Text;
+    
+    NSAttributedString *label6Text = [[NSAttributedString alloc] initWithString:@"Discounted Price" attributes:@{
+                                                                                                                    NSFontAttributeName: [UIFont fontWithName:@"OpenSans" size:13.0],
+                                                                                                                    NSForegroundColorAttributeName: [UIColor blackColor]
+                                                                                                                    }];
+    self.label6.numberOfLines = 0;
+    self.label6.attributedText = label6Text;
+
     
     // Add image page control
     self.imagePageControl.numberOfPages = 5;
