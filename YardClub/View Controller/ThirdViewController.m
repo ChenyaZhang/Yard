@@ -10,6 +10,7 @@
 #import "SecondViewController.h"
 #import "BottomToolBar.h"
 #import "FourthViewController.h"
+#import "ThirdVCLoadTable.h"
 
 @interface ThirdViewController ()
 @property (strong, nonatomic) IBOutlet UINavigationItem *topNavigationBar;
@@ -19,14 +20,22 @@
 @end
 
 @implementation ThirdViewController {
-    NSMutableArray *tableData;
+    NSArray *tableData;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Initialize table data
-    [self loadData];
+    [ThirdVCLoadTable loadTableData:^(NSArray *data){
+        if (data.count > 0) {
+            tableData = data;
+            // UI update must be in mainQueue
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.tableView reloadData];
+            }];
+        }
+    }];
     
     // Add custom buttons to top navigation bar
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"phone-call"] style:UIBarButtonItemStylePlain target:self action:nil];
@@ -73,48 +82,8 @@
     [self.navigationController showViewController:resultViewController sender:self];
 }
 
-- (void)loadData {
-    tableData = [[NSMutableArray alloc]init];
-    // NSURLSession
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://yardclub.github.io/mobile-interview/api/catalog/%@.json", self.categoryID]]];
-    [request setHTTPMethod:@"GET"];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (data != nil) {
-            // Convert the returned data into a dictionary.
-            NSError *error;
-            NSMutableArray *returnedArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-            // Check if no returnedDict
-            if (returnedArray == NULL) {
-                NSLog(@"No return data available for display!");
-            } else if (error != nil) {
-                NSLog(@"%@", [error localizedDescription]);
-                // No error
-            } else {
-                // If no error occurs, check the HTTP status code.
-                NSInteger HTTPStatusCode = [(NSHTTPURLResponse *)response statusCode];
-                // If it's other than 200, then show it on the console.
-                if (HTTPStatusCode != 200) {
-                    NSLog(@"HTTP status code = %ld!", (long)HTTPStatusCode);
-                }
-                for (int i = 0; i < returnedArray.count; i++) {
-                    NSDictionary *objectDict = [returnedArray objectAtIndex:i];
-                    NSString *value = [objectDict valueForKey:@"display_name"];
-                    [tableData addObject:value];
-                }
-            }
-            // UI update must be in mainQueue
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [self.tableView reloadData];
-            }];
-        }
-    }] resume];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

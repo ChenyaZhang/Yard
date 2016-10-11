@@ -9,5 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface ThirdViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-@property(strong, nonatomic) NSString *categoryID;
 @end
